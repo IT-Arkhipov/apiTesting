@@ -21,3 +21,6 @@ class Test_create_place():
 
         print(">> DELETE method")
         result_get: Response = Google_maps_api.delete_place(place_id=place_id)
+
+        print(">> GET after DELETE")
+        result_get: Response = Google_maps_api.get_place_information(place_id=place_id)

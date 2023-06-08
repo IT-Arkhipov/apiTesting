@@ -70,12 +70,14 @@ class Google_maps_api():
     def delete_place(place_id):
         """Delete existing location"""
 
-        del_resource = "/maps/api/place/update/json"
+        del_resource = "/maps/api/place/delete/json"
         del_url = base_url + del_resource + key
+        print(del_url)
         json_for_del_new_location = {
             "place_id": place_id
         }
         result_del = Http_methods.delete(del_url, json_for_del_new_location)
+        # print(result_del.status_code)
         print(result_del.text)
 
         return result_del
